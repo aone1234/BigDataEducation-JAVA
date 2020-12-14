@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+	
+	ul {
+		color: red;                 /* 목록의 글자색을 파란색 */
+		list-style-type: none;      /* 블릿의 형태를 없애는 것 */
+		list-style-type: square;    /* 블릿의 형태를 사각형으로 함 */
+	    padding: 0px; 		        /* 안쪽 여백을 없애기 */
+	}
+			
+	img {
+		border: 2px solid yello;
+	}
+	
+	h1 {
+		border-bottom-style: dotted;
+		width: 202px;
+	}
+
+	
