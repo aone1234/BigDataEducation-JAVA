@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>변수에 함수를 저장</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+	function hello(name) {
+		document.write(name + "님 환영 합니다.<br/>");		
+	}
+	
+	// hello("구미시민");
+		
+	var func = hello;
+	
+	func("구미시민");
+	func("대구시민");
+	func("서울시민");
+		
+	</script>
+
+</body>
+</html>
