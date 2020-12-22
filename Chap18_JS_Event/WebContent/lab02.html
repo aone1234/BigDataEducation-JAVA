@@ -12,12 +12,30 @@
 			<input id = "sbmBtn" type = "button" value = "SUBMIT"> 
 			<input id = "resBtn" type = "button" value = "RESET"><br/>
 		</form>		
-		
-		
-		
+	
 		<script type="text/javascript">
 			window.onload = function () {
+				var sbmBtn = document.getElementById('sbmBtn');
+				sbmBtn.onclick = function () {
+					if(document.getElementById('uId').value == "") {
+						alert("user id blank!!");
+						return false;
+					}else if(document.getElementById('uPw').value == "") {
+						alert("user pw blank!!");
+						return false;
+					} else {
+						alert("login ok!!");
+						document.getElementById('loginForm').submit();						
+					}
+					
+				};
 				
+				var resBtn = document.getElementById('resBtn');
+				resBtn.onclick = function () {
+					alert("reset ok!!");
+					document.getElementById('loginForm').reset();
+					
+				}
 			};
 
 		</script>	
