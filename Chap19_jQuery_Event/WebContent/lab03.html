@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
+
 	<style type="text/css">
 		div.card {
 			background: #ece023; width: 30px; height: 40px;
@@ -11,9 +12,8 @@
 			display: none;
 			line-height: 2; text-align: center; font-weight: bold;							
 		}
-		
-		
 	</style>
+
 </head>
 <body>
 	<div id = "outer">
@@ -30,15 +30,29 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript">	
-	$(document).ready(function () {
-		$("#show").click(function () {
-			$("div.card").first().show("fast", function showCard() {
-				$(this).next("div.card").show("fast", showCard);		
+		/* 
+			jQuery 효과 -- HTML 요소 보이거나 감추는 기능
+			show(duration[, callback]) 메소드 :
+			   - duration - 애니메이션이 실행되는 시간(1/1000초)
+				  		    'slow', 'normal', 'fast' (200,400,600)
+			   - callback : 애니메이션이 끝났을 때 호출 되는 함수.		 
+		*/		
+		$(document).ready(function () {
+			$("#show").click(function () {
+				$("div.card").first().show("fast", function showCard() {
+					$(this).next("div.card").show("fast", showCard);		
+				});
+			
+			});
+			
+			$("#hide").click(function () {
+				$("div.card").last().hide("fast", function hideCard () {
+					$(this).prev("div.card").hide("fast", hideCard());
+				});
+				
 			});
 			
 		});
-			
-	});
 	</script>
 </body>
 </html>
